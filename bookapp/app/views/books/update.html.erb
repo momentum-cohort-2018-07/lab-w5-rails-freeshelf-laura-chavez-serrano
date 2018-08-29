@@ -1,0 +1,26 @@
+<h1>Edit book</h1>
+ 
+   <%= form.label :Title %><br>
+      <%= form.text_field :title %> 
+    </p>
+   
+    <p>
+      <%= form.label :Publisher %><br>
+      <%= form.text_field :publisher %>
+    </p>
+    <p>
+    <%= form.label :Author %><br>
+     <%= form.text_field :author %>
+  </p>
+  <p>
+  <%= form.label :Description %><br>
+  <%= form.text_area :description %>
+</p>
+<%= form.label :'URL' %><br>
+<%= form.text_field :URL %>
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+ 
+<%= link_to 'Back', book_path %>

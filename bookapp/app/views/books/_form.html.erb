@@ -1,0 +1,51 @@
+<%= form_with model: @book, local: true do |form| %>
+ <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@book.errors.count, "error") %> prohibited
+        this book from being saved:
+      </h2>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+  <%= form.label :Title%>
+  <%= form.text_field :title %>
+</p>
+<p>
+  <%= form.label :Publisher%>
+  <%= form.text_field :publisher %>
+</p>
+ 
+<p>
+  <%= form.label :Author%>
+  <%= form.text_field :author %>
+</p>
+<p>
+<%= form.label :Description%>
+<%= form.text_field :description%>
+</p>
+<p>
+<%= form.label :URL%>
+<%= form.text_field :URL%>
+</p>
+<p>
+<%= form.label :user_id%>
+<%= form.text_field :user_id%>
+</p>
+    <%= form.submit %>
+  </p>
+
+  <%# <%= form.label :user_id %>
+  <%# <%= form.select :user_id do %> %>
+  <%# <% uid = User.all %> %>
+  <%# <% uid.each do |u|%> %>
+  <%# <%= content_tag (:option, u.name, value: u.id) %> %>
+  <%# <%end%> %>
+  <%# <%end%> %> %>
+ 
+<% end %>
