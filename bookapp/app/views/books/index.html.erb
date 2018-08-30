@@ -9,6 +9,8 @@
     <th>Description</th>
     <th>URL</th>
     <th>User</th>
+    <th>Name</th>
+    <th>checkout</th>
     <th colspan="2"></th>
   </tr>
  
@@ -19,18 +21,23 @@
       <td><%= book.author%></td>
       <td><%= book.description%></td>
       <td><%= book.URL%></td>
-      <%# <td><% if book.user %>
-      <%# <% uid = book.user %> 
-      <%# <% uid.name %> 
+      <td><% if book.user %>
+      <% uid = book.user %> 
+      <% uid.name %> 
+      <%end%>
       <td><%= book.user_id%>
-      <%# <%end%> 
+      <td><%= book.checkout%> </td>
+      <td><%= check_box_tag 'checkout[ ]', book.checkout %></td>
+
 
       <td><%= link_to 'Show', book_path(book) %></td>
       <td><%= link_to 'Edit', edit_book_path(book) %></td>
       <td><%= link_to 'Destroy', book_path(book),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+              
     </tr>
   <% end %>
 </table>
-<%= link_to 'List User', users_path %>
+<%= link_to 'List User', users_path %><br>
+<%= link_to 'Log Out', session_path, method: :delete %>

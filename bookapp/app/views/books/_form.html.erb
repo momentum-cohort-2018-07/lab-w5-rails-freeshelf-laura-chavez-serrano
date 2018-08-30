@@ -37,6 +37,11 @@
 <%= form.label :user_id%>
 <%= form.text_field :user_id%>
 </p>
+<p>
+<%= form.label :checkout%>
+<%# <%= form.text_field :checkout %> %>
+<td><%= check_box_tag 'checkout[ ]', @book.checkout %></td>
+</p>
     <%= form.submit %>
   </p>
 
@@ -47,5 +52,5 @@
   <%# <%= content_tag (:option, u.name, value: u.id) %> %>
   <%# <%end%> %>
   <%# <%end%> %> %>
- 
+ <%# # <%=check_box_tag 'checkout', 'accepted', form.text_field :checkout %>
 <% end %>

@@ -5,6 +5,7 @@
     <th>ID</th>
     <th>Name</th>
     <th>Book read</th>
+    <th>email</th>
   
     <th colspan="2"></th>
   </tr>
@@ -14,9 +15,10 @@
       <td><%= user.id %>
       <td><%= user.name %></td>
       <td><%= user.books_read%></td>
-      
+      <td><%= user.email%></td>
+         
 
-      <td><%= link_to 'Show', users_path(user) %></td>
+      <td><%= link_to 'Show', user_path(user) %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
       <td><%= link_to 'Destroy', users_path(user),
               method: :delete,

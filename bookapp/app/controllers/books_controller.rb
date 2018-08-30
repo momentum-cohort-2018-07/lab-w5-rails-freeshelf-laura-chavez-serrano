@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
     def index
+        user_ids = ""
         @books = Book.all
+        session[:current_user_id] = user_ids
+        puts user_ids
     end   
 
     def show
@@ -42,6 +45,6 @@ class BooksController < ApplicationController
     end
     private
         def book_params
-            params.require(:book).permit(:title, :publisher, :URL, :description, :author, :user_id)
+            params.require(:book).permit(:title, :publisher, :URL, :description, :author, :user_id, :checkout)
         end
 end
